@@ -35,5 +35,10 @@ namespace Player_Input
                 .Subscribe(_ => PlayerInputPresener.ClickMove(2, false))
                 .AddTo(disposables);
         }
+
+        public void EndGame()
+        {
+            disposables.Dispose();
+        }
     }
 }

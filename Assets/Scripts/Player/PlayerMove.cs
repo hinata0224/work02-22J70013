@@ -27,13 +27,17 @@ namespace Player_Move
         public void Move(int _vector)
         {
             Vector3 move = new Vector3(_vector * spead, 0, 0);
-            Debug.Log(move);
             rb.velocity = move;
             disposables.Clear();
             this.UpdateAsObservable()
                 .Subscribe(_ =>
                 {
                 }).AddTo(disposables);
+        }
+
+        public void GameEnd()
+        {
+            disposables.Dispose();
         }
     }
 }
