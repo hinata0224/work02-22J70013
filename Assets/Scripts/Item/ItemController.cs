@@ -33,7 +33,10 @@ namespace Item
 
         public void GameEnd()
         {
-            timer.EndTimer();
+            if (timer != null)
+            {
+                timer.EndTimer();
+            }
         }
 
         private void OnEnable()
